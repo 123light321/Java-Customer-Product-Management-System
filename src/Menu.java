@@ -36,12 +36,9 @@ public class Menu extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            customerCRUD = new CustomerCRUD();
-            productCRUD = new ProductCRUD();
-            invoiceCRUD = new InvoiceCRUD();
 
             if(e.getSource()==customerButton){
-
+                customerCRUD = new CustomerCRUD();
                 customerCRUD.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 customerCRUD.setSize(950,500);
                 customerCRUD.setLocationRelativeTo(null);
@@ -52,7 +49,7 @@ public class Menu extends JFrame {
                 PointOfSaleSystemTest.menu.setVisible(false);
             }
             else if (e.getSource()==productButton){
-
+                productCRUD = new ProductCRUD();
                 productCRUD.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 productCRUD.setSize(950,500);
                 productCRUD.setLocationRelativeTo(null);
@@ -63,7 +60,9 @@ public class Menu extends JFrame {
                 PointOfSaleSystemTest.menu.setVisible(false);
             }
             else if(e.getSource()==invoiceButton){
-
+                customerCRUD = new CustomerCRUD();
+                productCRUD = new ProductCRUD();
+                invoiceCRUD = new InvoiceCRUD();
                 invoiceCRUD.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 invoiceCRUD.setSize(950,500);
                 invoiceCRUD.setLocationRelativeTo(null);

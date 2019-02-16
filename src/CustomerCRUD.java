@@ -327,7 +327,6 @@ public class CustomerCRUD extends JFrame{
             data[3] = customers.get(i).genderToString();
             data[4] = customers.get(i).city;
             data[5] = customers.get(i).cellNumber;
-            data[6] = customers.get(i).activeToString();
             tableModel.addRow(data);
         }
     }
@@ -350,9 +349,9 @@ public class CustomerCRUD extends JFrame{
         String cellNumber = cellNumberField.getText();
         Customer customer;
         if(!(id==id1)) {
-            customer = new Customer(id1, name, email, gender, true, city, cellNumber);
+            customer = new Customer(id1, name, email, gender, city, cellNumber);
         }else{
-            customer = new Customer(id, name, email, gender, true, city, cellNumber);
+            customer = new Customer(id, name, email, gender, city, cellNumber);
         }
         return customer;
     }

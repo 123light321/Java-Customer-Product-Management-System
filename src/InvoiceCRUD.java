@@ -189,8 +189,14 @@ public class InvoiceCRUD extends JFrame {
         return invoice;
     }
     public void retrieveTableRows(){
-        int num = productComboBox.getSelectedIndex();
-        tableModel2.addRow(getRowAt(num));
+        int num=-1;
+        try {
+            num = productComboBox.getSelectedIndex();
+            tableModel2.addRow(getRowAt(num));
+        }catch (Exception e){
+            System.out.println("There is not product in list");
+        }
+
     }
     public Object[] getRowAt(int row) {
         Object[] result = new Object[5];
@@ -213,8 +219,12 @@ public class InvoiceCRUD extends JFrame {
     }
     public void setListIds(){
         invoiceListId = new String [invoices.size()];
-        for(int i = 0; i< invoices.size(); i++) {
-            invoiceListId [i]= String.format("  " + invoices.get(i).invoiceId + " --- " + CustomerCRUD.customers.get(invoices.get(i).customerId).name );
+        try {
+            for (int i = 0; i < invoices.size(); i++) {
+                invoiceListId[i] = String.format("  " + invoices.get(i).invoiceId + " --- " + CustomerCRUD.customers.get(invoices.get(i).customerId).name);
+            }
+        }catch (Exception e){
+            System.out.println("There is no invoices");
         }
         //invoiceList.setListData(invoiceListId);
     }
