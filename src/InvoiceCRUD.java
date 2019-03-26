@@ -123,7 +123,7 @@ public class InvoiceCRUD extends JFrame {
         backButton.setPreferredSize(new Dimension(140,70));
     }
     public void setTableValues(){
-        Object[] data = new Object[4];
+        Object[] data = new Object[5];
         tableModel.setRowCount(0);
         for (int i = 0; i < invoices.size(); i++) {
             data[0] = invoices.get(i).invoiceId;
